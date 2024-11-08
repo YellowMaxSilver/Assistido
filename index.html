@@ -4,58 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="antegeddon.png">
+    <link rel="icon" href="./images/icons/antegeddon.png">
     <title>Assistido</title>
 </head>
 <body>
+  <script src="script.js"></script>
+  <script src="ao_script.js"></script>
+
+  <!-- oficcial -->
+    <section class="notification_section" id="notification_section">
+
+      <!-- <box class="notification_box">
+        <div class="close_notification_box"></div>
+        <div class="notification_icon"></div>
+        <div class="notification_text">
+          <h4 class="normal_text">
+            text etxt etxe tetxte xettxet xtetxet txetxaaaaaaaaaaaaaaaaaaaaaa  
+          </h4>
+        </div>
+      </box> -->
+
+
+    </section>
+
+
     <ul id="top_bar">  
       <li><h2>Assistido</h2></li>
     </ul>
 
     <ul id="nav_bar">
-    <li><div><h3>Inicio</h3></div></li>
+    <li><div onclick="show_notification_box()"><h3>Inicio</h3></div></li>
     <li><div><h3>Faca</h3></div></li>
     <li><div><h3>Hello</h3></div></li>
-    <li><input id='search_bar' type="search" placeholder="search"></li> 
+    <li><input id='search_bar' type="search" placeholder="search" autocomplete="off" style="outline: none;"><button>search</button></li> 
+    <li><a href="signup.html"><h3 style="color: rgb(0, 121, 228);float: right;">Login</h3></a></li>
     </ul>
 
-    <ul class="user_bar">
-     <li><img class='user_img'src="user_icon.png"><li>
-    </ul>
+    <div class="user_bar" id="user_bar" onclick="show_user_bar()" onmouseleave="hidden_user_bar()">
+      <a href="account.html">
+        <div class="box_user_bar" style="background-color: black;"><h5 class="normal_text">user_name</h5><img class='user_img'src="./images/icons/user_icon.png"></div>
+      </a>
+
+      <a href="user.html">
+        <div class="box_user_bar" style="border: 2px solid rgb(163, 33, 33);background-color: rgba(112, 30, 30, 0.658);"><h5 class="normal_text" style="color: red;text-align: center;">Upload</h5></div>
+      </a> 
+
+      <a href="user.html">
+        <div class="box_user_bar" style="border: 2px solid rgb(53, 93, 180);background-color: rgba(30, 63, 134, 0.658);"><h5 class="normal_text" style="color: rgb(0, 81, 255);text-align: center;">See Later</h5></div>
+      </a>
+    </div>
+    <!-- oficcial -->
 
     <section id='news_bar'>
       <h3 class='normal_text'>News</h3>
     </section>
     
-    <section class='videos_section'>
-    <div class="movie_box">
-        <a href="movies.html">  
-          <img src="banner_icon.jpg">   
-          <div class="text_movie_box"><p class="movie_name">Movie1</p></div>
-        </a>
-    </div>
+    <section id="videos_section" class='videos_section'>
+
 
     <div class="movie_box">
-        <a href="movies.html">  
-          <img src="banner_icon.jpg">   
-          <div class="text_movie_box"><p class="movie_name">Movie2</p></div>
-        </a>
+        <!-- <a href="movies.html">   -->
+          <div class='banner_video' style="background-image: url('./images/icons/banner_icon.jpg')"></div>  
+          
+          <div class="info_post_video">
+            <div class="box_text_video">
+              <div style="width:90%;margin-left: 20px;"><h4 class="normal_text">Movie name title</h4></div>  
+            </div>
+            <div class="channel_bar">
+              <img class="user_img_box" src="./images/icons/user_icon.png" style="margin-right: 10px;margin-left: 10px;">
+              <h5 class="normal_text">channel_name</h5>
+              <h6 class="normal_text" style="margin-left: 15px;">000 views</h6>
+                  <div onclick="show_more(this)" style="display: flex;position: absolute;right: 0;margin-right: 10px;">
+                  <div class="diverse_button" ></div>
+                    <ul class="show_more" id="show_more" onmouseleave="show_hidden(this)">
+                      <li><h5 class="normal_text">Report</h5></li>
+                      <li><h5 class="normal_text">Save</h5></li>
+                      <li><h5 class="normal_text">not interessed</h5></li>
+                    </ul>
+                 </div>
+            </div>
+          </div>   
+
+        <!-- </a> -->
     </div>
 
-    <div class="movie_box">
-        <a href="movies.html">  
-          <img src="banner_icon.jpg">   
-          <div class="text_movie_box"><p class="movie_name">Movie3</p></div>
-        </a>
-    </div>
-
-    <div class="movie_box">
-      <a href="movies.html">  
-        <img src="banner_icon.jpg">   
-        <div class="text_movie_box"><p class="movie_name">Movie4</p></div>
-      </a>
-  </div>
+    
 
     </section> 
+
+    <footer class="footer_style">
+    </footer>
 </body>
 </html>
+

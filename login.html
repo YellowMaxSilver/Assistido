@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        function verif_data(){
+            let info_data = new FormData();
+            info_data.append('email',document.getElementById('email').value)
+            info_data.append('password',document.getElementById('password').value)
+
+            $.ajax({
+                url: 'login.php',
+                method: 'post',
+                data: info_data,
+                processData: false,
+                contentType: false,
+                success: function(data){
+                    window.alert('super faca :'+data);
+
+                    // if(data == ''){
+                    //     window.open('index.html','_self')
+                    // }
+                }
+            })
+
+
+        }
+
+    </script>
+
+    <div class="sign_box"> 
+        <!-- <form action="sign.php" method="post"> -->
+            <h2 class="normal_text" style="text-align: center;">Sign in</h2>
+
+            <input class="input_sign" placeholder="Email" autocomplete="off" type="email" id="email" style="margin-top: 60px;">
+            <h5 class="normal_text" style="position: absolute;margin-top: -30px;margin-left: 60px;color:red;" id="erro_menssage_email"></h5>
+
+            <input class="input_sign" placeholder="Password" autocomplete="off" type="password" id="password">
+
+            <div style="width: 100%;display: flex;">
+            <button class="normal_button" style="margin-left: auto;margin-right: auto;" onclick="verif_data()">Next</button>
+            </div>
+        <!-- </form> -->
+    </div>
+    
+</body>
+</html>

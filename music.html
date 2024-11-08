@@ -18,34 +18,44 @@
     <li><input id='search_bar' type="search" placeholder="search" autocomplete="off" style="outline: none;"></li> 
     </ul>
 
-    <ul class="user_bar">
+    <!-- <ul class="user_bar">
      <li><img class='user_img'src="./images/icons/user_icon.png"><li>
-    </ul>
+    </ul> -->
+
+    <script>
+      var player = false;
+
+      function super_faca(){
+        let audio = document.getElementById('faca');
+        let play_buttom = document.getElementById('music_play_buttom');
+        if(player == false){
+          audio.play();
+          player = true;
+          play_buttom.style= "background-image: url('./images/icons/video_player/pause_button.png');";
+        }else if(player == true){
+          audio.pause();
+          play_buttom.style= "background-image: url('./images/icons/video_player/play_button.png');";
+        }
+      }
+    </script>
    
     <div class='video_bar'>
 
-        <div id="video_watch" class="video_watch" onmouseover="prepare(this)">
-        <video class="video_view" src="0428(1).mp4" poster="./images/icons/banner_icon.jpg" preload="none"></video>
-         <div class="loader"></div>
-         <div class="control_bar">
+        <box class="music_section">
+              <div class="music_background" style="background-image: url('./images/icons/user_icon.png');"></div>
+              <div style="background-color: black;width: 100%;height: 100%;position: absolute;opacity: 50%;top:0;"></div>
+              <div class="music_poster" style="background-image: url('./images/icons/user_icon.png');"> </div>
+              <box class="commands_box">
+                <div class="buttons_box">
+                  <div class="music_play_buttom" onclick="super_faca()" id="music_play_buttom"></div>
+                </div>
+                <div class="progress_box">
+                  <div class="progressBar"></div>
+                </div>
+              </box>
+              <audio src="2024-01-11-02-56-36_G_minor__bpm_70.mp3" id="faca"></audio>
+        </box>
 
-           <div class="video_progress_bar">
-             <div class="video_loader"></div>
-             <div class="video_progress"></div>
-           </div>
-
-           <div class="video_play float-left video_btn"></div>
-           <div class="video_volume float-left video_btn"></div>
-
-            <div class="slider float-left">
-             <div class="slider_vol"></div>
-            </div>
-
-           <div class="video_time float-left">00:00 | 00:00</div>
-           <div class="video_screen float-right video_btn"></div>
-         </div>  
-
-        </div>
 
   
         <div class="scroll_box">
@@ -71,7 +81,8 @@
 
            <div class="description">
              <div class="info_about_video"><h5>00/00/0000</h5></div>
-             <textarea class="text_description normal_text" wrap="hard" readonly>asdhau yasduyga yg aysdguy yusg uaygdu ysyafryigyas</textarea>
+             <textarea class="text_description normal_text" wrap="hard" readonly>asdhau yasduyga yg aysdguy yusg uaygdu ysyafryigyas nod fgi odfigod fgoid fgjoid gjidjgo idjfoijgoidjogi</textarea>
+             <div class="info_about_video"><h5>Show More</h5></div>
            </div>
 
            <div class="comments">
